@@ -1,0 +1,9 @@
+#A for-loop that extends from index.
+
+word1 = ""
+index = 0
+for n in range(0, 6):
+  full_word = "pypypy"
+  word1 += full_word[index]
+  index += 1
+  print(word1)
