@@ -16,7 +16,7 @@ Yearly_Costs = Costs / Years_left
 print(f"It would costs me {int(Yearly_Costs)} SEK per year to use it, if I live for {Years_left} more that is. My lungs will probably thank me. ")
 
 #Now some calulus: 
-income = input("Skriv din årsinkomst (utan mellanslag): ")
+income = input("Skriv din Ã¥rsinkomst (utan mellanslag): ")
 income = float(income)
 tax = 0.3
 if income > 20000: 
@@ -34,15 +34,50 @@ if len(word2) >= 3 or len(word3) >= 3:
 elif len(word2) >= 3 and len(word3) >= 3:
   level = 2
 else: 
-  print("Ta bladet från munnen, pojkvasker!")
+  print("Ta bladet frÃ¥n munnen, pojkvasker!")
 print(level)
 
 #Password-Check:
-user = input("Användarnamn: ")
-password = input("Lösenord: ")
+user = input("AnvÃ¤ndarnamn: ")
+password = input("LÃ¶senord: ")
 if user == "vatten" and password == "lavemang":
-  message = "Välkommen!"
+  message = "VÃ¤lkommen!"
 elif user =="vatten" or password == "lavemang":
-  message = "Försök igen"
+  message = "FÃ¶rsÃ¶k igen"
 else:
   message = "Haha, helt fel!!"
+
+
+
+#Program for calculating the costs at a barberer:
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+total_price = 0
+
+#Calculating total price:
+for price in prices: 
+  total_price =+ price
+
+#Calculating the avarage price:
+avarage_price = total_price // len(prices)
+print("""Avarage Haircut Price: 
+"""+ str(avarage_price) + " $")
+
+#Raising the cost by 5$:
+new_prices = [price - 5 for price in prices]
+print(new_prices)
+
+#Renevues, weekly & daily:
+total_revenue = 0
+for i in range(len(hairstyles)):
+  total_revenue += prices[i] * last_week[i]
+print("Total revenue: " + str(total_revenue))
+
+avarage_daily_revenue = total_revenue // 7
+print(avarage_daily_revenue)
+
+#Getting the hairstyles from under 30 $ for advertising: 
+cuts_under_30 = [hairstyles[i] for i in range(len(hairstyles)) if new_prices[i] < 30]
+
+print(cuts_under_30)
