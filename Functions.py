@@ -80,3 +80,8 @@ def get_energy(mass, c=3*10**8):
   return mass * c**2
 bomb_energy = get_energy(bomb_mass)
 print("A 1kg bomb supplies " + str(bomb_energy) + " Joules.")
+
+import math
+def my_area_if_I_was_a_2d_circle(human_radius):
+  area = human_radius**2 * 3.14
+  return area
